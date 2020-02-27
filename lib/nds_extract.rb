@@ -7,17 +7,18 @@ require_relative './directors_database'
 
 def directors_totals(source)
   result = {}
-  director_index = 0
-  while director_index < source.size do
-    director = source[director_index]
+  i = 0
+  while i < source.size do
+    director = source[i]
     result[director[:name]] = gross_for_director(director)
-    director_index += 1
+    i += 1
   end
   result
 end
 
 # Takes director NDS (H -> A -> H) as argument
 # Returns total gross earned as an integer
+
 def gross_for_director(d)
   total = 0
   index = 0
